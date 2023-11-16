@@ -63,16 +63,17 @@ This implements the clearing of the Demo screen controls before the textual menu
 When it runs, the demo screen shows.
 
 
-![The demo screen](./MultiMenu/Menu1.jpg)
+![The demo screen](./MultiMenu/menu0.jpg)
 
 
 After a period the first level of the menu shows.
 
-![The menu screen](./MultiMenu/Menu1.jpg)
+![The menu screen](./MultiMenu/menu1.jpg)
 
+The blue buttons are, bottom right, used to navigate the menu.
 The top and bottom buttons are used to move up and down the menu. The right button is used to select an item and move to the next level. 
 The left button is used to go back to the previous menu level. 
-The Demo screen suggests this navigation scenario but ghe drawn buttons there aren't actionable.
+The Demo screen suggests this navigation scenario but the drawn buttons there aren't actionable.
 
 
 When a menu item is selected, it is push onto the Stack with other data for that menu level. The menu is then cleared and the next level is drawn.
