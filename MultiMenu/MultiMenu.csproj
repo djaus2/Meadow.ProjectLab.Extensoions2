@@ -7,17 +7,17 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="img_meadow.bmp" />
-    <None Remove="smallazurexmas.bmp" />  </ItemGroup>
+    <None Remove="smallazurexmas.bmp" />  
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="img_meadow.bmp" />
+    <EmbeddedResource Include="smallazurexmas.bmp" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Meadow.Foundation.Graphics.MicroLayout" Version="*" />
     <PackageReference Include="Meadow.ProjectLab" Version="*" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="smallazurexmas.bmp" />
-  </ItemGroup>  <ItemGroup>
+ <ItemGroup>
     <None Update="app.config.yaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
