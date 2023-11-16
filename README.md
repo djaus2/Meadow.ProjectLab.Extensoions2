@@ -76,7 +76,7 @@ The left button is used to go back to the previous menu level.
 The Demo screen suggests this navigation scenario but the drawn buttons there aren't actionable.
 
 
-When a menu item is selected, it is push onto the Stack with other data for that menu level. The menu is then cleared and the next level is drawn.
+When a menu item is selected, it is pushed onto the Stack with other data for that menu level. The menu is then cleared and the next level is drawn.
 When [Back] is selected and the previous menu level is redrawn, the previous menu menu data is recovered from the Stack and the item previously selected there is reselected.
 
 
