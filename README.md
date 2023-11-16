@@ -68,7 +68,7 @@ When it runs, the demo screen shows.
 
 After a period the first level of the menu shows.
 
-![The menu screen](./MultiMenu/menu1.jpg)
+![The menu screen](./MultiMenu/Menu1.jpg)
 
 The blue buttons are, bottom right, used to navigate the menu.
 The top and bottom buttons are used to move up and down the menu. The right button is used to select an item and move to the next level. 
