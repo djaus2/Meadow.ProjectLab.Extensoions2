@@ -1,0 +1,25 @@
+﻿<Project Sdk="Meadow.Sdk/1.1.0">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <OutputType>Library</OutputType>
+    <AssemblyName>App</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="img_meadow.bmp" />
+    <None Remove="smallazurexmas.bmp" />  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="img_meadow.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Meadow.Foundation.Graphics.MicroLayout" Version="*" />
+    <PackageReference Include="Meadow.ProjectLab" Version="*" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="smallazurexmas.bmp" />
+  </ItemGroup>  <ItemGroup>
+    <None Update="app.config.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
