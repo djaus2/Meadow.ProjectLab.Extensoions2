@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Text;
 using Meadow.Foundation.Graphics.MicroLayout;
 
-namespace MicroLayoutMenu
+namespace MultiMenu
 {
     internal class MultiMenu
     {
@@ -19,6 +19,7 @@ namespace MicroLayoutMenu
 
         MenuDetails _menuDetails = null;
         public MenuSettings _MenuSettings { get; private set; }
+
 
         public MultiMenu(IProjectLabHardware _projectLab,DisplayScreen _screen, MicroAudio audio)
         {
@@ -48,6 +49,8 @@ namespace MicroLayoutMenu
             _projectLab.UpButton.Clicked += (s, e) => _menu.Up();
             _projectLab.DownButton.Clicked += (s, e) => _menu.Down();
             _projectLab.LeftButton.Clicked += ActionBack;
+            _projectLab.LeftButton.LongClickedThreshold = TimeSpan.FromMilliseconds(1500);
+            _projectLab.LeftButton.LongClicked += ActionRestart;
         }
         void ShowMenuScreen(string Title, string items, System.EventHandler action, bool menuBack = false)
         {
@@ -106,7 +109,13 @@ namespace MicroLayoutMenu
 
 
         }
-
+        private void ActionRestart(object sender, EventArgs e)
+        {
+            _menu = null;
+            _menuDetails = null;
+            _menuStack = new Stack();
+            Action0();
+        }
 
         private void ActionBack(object sender, EventArgs e)
         {

@@ -13,7 +13,7 @@ using System.Runtime;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MicroLayoutMenu
+namespace MultiMenu
 {
     // Change F7FeatherV2 to F7FeatherV1 for V1.x boards
     public class MeadowApp : App<F7CoreComputeV2>
@@ -42,8 +42,8 @@ namespace MicroLayoutMenu
 
         void ShowDemoScreen()
         {
-            //var image = Image.LoadFromResource("MicroLayoutMenu.img_meadow.bmp");
-            var image = Image.LoadFromResource("MicroLayoutMenu.smallazurexmas.bmp");
+            //var image = Image.LoadFromResource("MultiMenu.img_meadow.bmp");
+            var image = Image.LoadFromResource("MultiMenu.smallazurexmas.bmp");
 
             const int ButtonHeight = 25;
             const int ButtonWidth = 100;

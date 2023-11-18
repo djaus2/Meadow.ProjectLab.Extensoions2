@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace MicroLayoutMenu
+namespace MultiMenu
 {
     public class MenuData
     {

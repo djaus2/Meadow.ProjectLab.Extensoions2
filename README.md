@@ -3,6 +3,12 @@
 Based upon the Meadow.Foundation project sample, **MicroLayoutMenu**.  
 This implments a Multi-level Menu System with menu Up/Down as well as [Select] _(choose item and move to next menu level)_ and [Back] _(go back one menu level)_.
 
+<hr/>
+>  Update: Bug Fix. App had been renamed so path to image needed change.
+> Also Long Click (1.5s) on left resets menu to top level with no previous selections.
+
+<hr/>
+
 ![The board](https://github.com/djaus2/Meadow.ProjectLab.Extensions/blob/master/theboard.png)  
 **_The WILDERNESS LABS Project Lab V3 board_**
 

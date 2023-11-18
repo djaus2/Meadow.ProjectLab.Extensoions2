@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MicroLayoutMenu
+namespace MultiMenu
 {
     public class MenuSettings
     {
