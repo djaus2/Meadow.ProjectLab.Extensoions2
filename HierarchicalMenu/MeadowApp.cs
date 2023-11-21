@@ -42,8 +42,8 @@ namespace HierarchicalMenu
 
         void ShowDemoScreen()
         {
-            //var image = Image.LoadFromResource("MultiMenu.img_meadow.bmp");
-            var image = Image.LoadFromResource("MultiMenu.smallazurexmas.bmp");
+            //var image = Image.LoadFromResource("HierarchicalMenu.img_meadow.bmp");
+            var image = Image.LoadFromResource("HierarchicalMenu.smallazurexmas.bmp");
 
             const int ButtonHeight = 25;
             const int ButtonWidth = 100;
@@ -56,7 +56,7 @@ namespace HierarchicalMenu
                 },
                 new Label(15, 20, 290, 40)
                 {
-                    Text = "MultiMenu! Plz Wait 10s.",
+                    Text = "Hierarchical Menu!",
                     TextColor = Color.Black,
                     BackColor = Color.FromHex("#C9DB31"),
                     Font = new Font12x20(),
@@ -89,8 +89,8 @@ namespace HierarchicalMenu
                     TextColor = Color.White,
                     ForeColor = Color.Red,
                     Font = new Font12x20(),
-                    PressedColor = Color.FromHex("#C9DB31"),
-                    //Pressed = ButtonPressed()
+                    PressedColor = Color.FromHex("#C9DB31")
+                    //,Pressed = ButtonPressed()
                 },
                 new Button(_screen.Width-(ButtonWidth+pad), _screen.Height - pad * (ButtonHeight + pad) , ButtonWidth, ButtonHeight)
                 {
@@ -110,8 +110,8 @@ namespace HierarchicalMenu
         {
             ShowDemoScreen();
 
-            // Move to MultiMenu after 10sec
-            Thread.Sleep(10000);
+            // Move to HierarchicalMenu after 10sec
+            Thread.Sleep(5000);
 
             multiMenu = new MultiMenu(_projectLab, _screen, audio);
             multiMenu.Action0();
@@ -121,6 +121,9 @@ namespace HierarchicalMenu
 
 
         //Nb: Pressed is not working
+        // Further, seems that this method was firing 
+        // From its reference at
+        // See //,Pressed = ButtonPressed()
         //public bool ButtonPressed()
         //{
         //    multiMenu = new MultiMenu(_projectLab, _screen, audio);

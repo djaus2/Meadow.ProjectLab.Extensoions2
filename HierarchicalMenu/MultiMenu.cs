@@ -6,6 +6,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using Meadow.Foundation.Graphics.MicroLayout;
+using System.Threading;
+using System.Linq;
 
 namespace HierarchicalMenu
 {
@@ -49,9 +51,16 @@ namespace HierarchicalMenu
             _projectLab.UpButton.Clicked += (s, e) => _menu.Up();
             _projectLab.DownButton.Clicked += (s, e) => _menu.Down();
             _projectLab.LeftButton.Clicked += ActionBack;
-            _projectLab.LeftButton.LongClickedThreshold = TimeSpan.FromMilliseconds(1500);
             _projectLab.LeftButton.LongClicked += ActionRestart;
+            _projectLab.LeftButton.LongClickedThreshold = TimeSpan.FromMilliseconds(1500);
+            Hierarchical.InitMenu();
         }
+
+        private void LeftButton_LongClicked(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         void ShowMenuScreen(string Title, string items, System.EventHandler action, bool menuBack = false)
         {
             _screen.Controls.Clear();
@@ -134,29 +143,36 @@ namespace HierarchicalMenu
 
         public void Action0()
         {
+            Hierarchical.InitMenu();
             int actionNo = 0;
             // Setup first menu only
-            MenuData md = AppSettings.MenuDataList[actionNo];
+            MenuData md = Hierarchical.GetMenu(actionNo); 
             ShowMenuScreen(md.Title, md.Items, Action1);
+
         }
 
         private void Action1(object sender, EventArgs e)
         {
+  
             int actionNo = 1;
             int index = _menu.SelectedRow;
             //Do Whatever for first menu
+            Hierarchical.MenuSelections[actionNo-1] = index;
 
-            MenuData md = AppSettings.MenuDataList[actionNo];
+            MenuData md = Hierarchical.GetMenu(actionNo);
             ShowMenuScreen(md.Title, md.Items, Action2);
         }
+
 
         private void Action2(object sender, EventArgs e)
         {
             int actionNo = 2;
             int index = _menu.SelectedRow;
-            //Do Whatever for second menu
 
-            MenuData md = AppSettings.MenuDataList[actionNo];
+            //Do Whatever for second menu
+            Hierarchical.MenuSelections[actionNo - 1] = index;
+
+            MenuData md = Hierarchical.GetMenu(actionNo);
             ShowMenuScreen(md.Title, md.Items, Action3);
         }
 
@@ -165,21 +181,14 @@ namespace HierarchicalMenu
             int actionNo = 3;
             int index = _menu.SelectedRow;
             //Do Whatever for previous menu
+            Hierarchical.MenuSelections[actionNo - 1] = index;
 
-            MenuData md = AppSettings.MenuDataList[actionNo];
-            ShowMenuScreen(md.Title, md.Items, Action4);
+            Resolver.Log.Info($"Menu Selections: {Hierarchical.MenuSelections[0]} {Hierarchical.MenuSelections[1]} {Hierarchical.MenuSelections[2]}");
+            string SelectionsCsv = Hierarchical.GetSelections() + ",,Long[Left] press 2 Restart";
+            ShowMenuScreen("Selections", SelectionsCsv, null);
         }
 
-        private void Action4(object sender, EventArgs e)
-        {
-            int actionNo = 4;
-            int index = _menu.SelectedRow;
-            //Do Whatever for previous menu
-            // Perhaps remove  the next line.  It is just to show that you can continue to add menus.
-            
-            MenuData md = AppSettings.MenuDataList[actionNo];
-            ShowMenuScreen(md.Title, md.Items, null);
-        }
+
 
         // Add more of these as needed
     }

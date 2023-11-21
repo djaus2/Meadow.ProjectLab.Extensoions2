@@ -2,6 +2,7 @@
 using Meadow.Foundation;
 using Meadow.Foundation.Graphics;
 using Meadow.Foundation.Graphics.MicroLayout;
+using System;
 
 namespace HierarchicalMenu
 {
@@ -89,14 +90,20 @@ namespace HierarchicalMenu
                 Draw(0, prevIndex);
         }
 
+  
+        public void Action(object sender, EventArgs e)
+        {
+
+            int index = SelectedRow++;// _menu.SelectedRow;
+            Resolver.Log.Info($"Action1 Enter: {index}");
+        }
+
         public void Down()
         {
             if (SelectedRow < Labels.Length - 1)
             {
                 SelectedRow++;
-
-                Resolver.Log.Info($"CURRENT MENU ITEM: {Labels[SelectedRow].Text}");
-
+                Resolver.Log.Info($"[Down]: CURRENT MENU ITEM: {Labels[SelectedRow].Text}");
                 Draw(SelectedRow - 1, SelectedRow);
             }
         }
@@ -107,7 +114,7 @@ namespace HierarchicalMenu
             {
                 SelectedRow--;
 
-                Resolver.Log.Info($"CURRENT MENU ITEM: {Labels[SelectedRow].Text}");
+                Resolver.Log.Info($"[Up]: CURRENT MENU ITEM: {Labels[SelectedRow].Text}");
 
                 Draw(SelectedRow + 1, SelectedRow);
             }
