@@ -9,9 +9,9 @@ This implments a Multi-level Menu System with menu Up/Down as well as [Select] _
 Selection determines the next menu level options.  
 **MultiMenu** just has cascading menus. The same at each level regardless.  
 
-> Update 2: Remove 2nd instantiation of menus that causes menus handlers to be called twice.  
+> Update 2: [Bug fix] Remove 2nd instantiation of menus that causes menu handlers to be called twice.  
 
-> Update 1: Bug Fix. App had been renamed so path to image needed change.  
+> Update 1: [Bug Fix] App had been renamed so path to image needed change.  
 
 > Update 1.1: Also Long Click (1.5s) on left resets menu to top level with no previous selections.
 
