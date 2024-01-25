@@ -14,6 +14,7 @@
     <EmbeddedResource Include="smallazurexmas.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Meadow.Foundation.Audio.MicroAudio" Version="*" />
     <PackageReference Include="Meadow.Foundation.Graphics.MicroLayout" Version="*" />
     <PackageReference Include="Meadow.ProjectLab" Version="*" />
   </ItemGroup>

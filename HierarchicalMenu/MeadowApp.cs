@@ -19,6 +19,7 @@ namespace HierarchicalMenu
     public class MeadowApp : App<F7CoreComputeV2>
     {
         private IProjectLabHardware _projectLab;
+        //private Meadow.Foundation.Audio.PiezoSpeaker audio;
         private MicroAudio? audio;
         private DisplayScreen _screen;
         private MultiMenu multiMenu;
