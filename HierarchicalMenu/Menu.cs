@@ -37,7 +37,7 @@ namespace HierarchicalMenu
             _highlightBox = new Box(0, -1, screen.Width, ItemHeight + 2)
             {
                 ForeColor = SelectionColor,
-                Filled = true,
+                IsFilled = true,
             };
             
             screen.Controls.Add(_highlightBox);
